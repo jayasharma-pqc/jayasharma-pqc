@@ -115,12 +115,37 @@ main > section:first-of-type { border-top: 0; }
   border-top: 0;
 }
 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
 .hero h1 {
   margin: 0;
   font-weight: 700;
   font-size: clamp(2.1rem, 6vw, 2.9rem);
   letter-spacing: -0.015em;
   line-height: 1.12;
+}
+
+.portrait {
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: var(--tag-bg);
+}
+
+@media (max-width: 40rem) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .portrait { width: 132px; height: 132px; }
 }
 
 /* --- headings & prose ------------------------------------------------- */
