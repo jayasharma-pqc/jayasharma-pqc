@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jaya Sharma</title>
+<meta name="description" content="Jaya Sharma — PhD student in Cybersecurity Engineering at the Technical University of Denmark, working on quantum cryptography.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Jaya Sharma</a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#research">Research</a>
+      <a href="#news">News</a>
+      <a href="publications.html">Publications</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Jaya Sharma</h1>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="wrap measure">
+      <h2>Research</h2>
+      <p>
+        I'm a PhD student in Cybersecurity Engineering at the
+        <a href="https://carstenbaum.com/dtu-cryptography-group/" style="color:#26365e;">DTU Cryptography Group</a>,
+        Technical University of Denmark, supervised by Christian Majenz.
+        My research sits at the intersection of theoretical cryptography and quantum computing. My PhD is in studying the security of cryptographic constructions in the <strong>quantum random oracle model (QROM)</strong> and post quantum constructions.
+      </p>
+      <p>
+        More broadly, I'm interested in public-key cryptography, zero-knowledge
+        proofs, lattice-based cryptography, and quantum information.
+      </p>
+      <p>
+        Before DTU, I completed a Master's in Mathematics at IIT Roorkee and a
+        Bachelor's (Honours) in Mathematics at Lady Shri Ram College, University of
+        Delhi, and spent three semesters as a Junior Research Fellow at IIIT Delhi.
+      </p>
+    </div>
+  </section>
+
+  <section id="news">
+    <div class="wrap">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li class="news-item">
+          <span class="news-date">2026–</span>
+          <span class="news-body"><p>Visiting researcher at <span class="tag">CWI, Amsterdam</span>, hosted by Serge Fehr, through December 2026.</p></span>
+        </li>
+        <li class="news-item">
+          <span class="news-date">2026</span>
+          <span class="news-body"><p>"Security of the Fischlin Transform in the Quantum Random Oracle Model," with Christian Majenz, accepted to <span class="tag">ASIACRYPT '26</span> and <span class="tag">QCrypt '26</span>.</p></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="wrap measure">
+      <h2>CV</h2>
+      <p>A full list of coursework, talks, and academic history.</p>
+      <a class="cv-link" href="https://drive.google.com/drive/folders/1uhHWr9TlVtODpbN_DpbAzBsLsTTHURRv?usp=sharing">Download CV</a>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap measure">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span class="label">Email</span> <a href="mailto:jaysh@dtu.dk">jaysh@dtu.dk</a></li>
+        <li><span class="label">DTU Orbit</span> <a href="https://orbit.dtu.dk/en/persons/jaya-sharma">orbit.dtu.dk</a></li>
+        <li><span class="label">ORCID</span> <a href="https://orcid.org/0000-0001-5811-5714">0000-0001-5811-5714</a></li>
+        <li><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/jayya-sharma/">in/jayya-sharma</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Jaya Sharma</div>
+</footer>
+
+<script>
+  // Scroll-spy: highlight the current section's nav link.
+  (function(){
+    var links = Array.prototype.slice.call(document.querySelectorAll('#nav-links a[href^="#"]'));
+    var sections = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+    if(!('IntersectionObserver' in window)) return;
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var idx = sections.indexOf(entry.target);
+        if(idx === -1) return;
+        if(entry.isIntersecting){
+          links.forEach(function(l){ l.classList.remove('active'); });
+          links[idx].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    sections.forEach(function(s){ if(s) observer.observe(s); });
+  })();
+</script>
+
+</body>
+</html>
